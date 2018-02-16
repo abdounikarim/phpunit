@@ -58,4 +58,21 @@ class Dinosaur
         );
     }
 
+    /**
+     * @return string
+     */
+    public function getGenus(): string
+    {
+        return $this->genus;
+    }
+
+    /**
+     * @param string $genus
+     */
+    public function setGenus(string $genus)
+    {
+        $this->genus = $genus;
+    }
+
+
 }
