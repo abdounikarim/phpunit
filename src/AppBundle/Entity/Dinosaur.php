@@ -34,7 +34,6 @@ class Dinosaur
 
     public function __construct(string $genus = 'Unknown', bool $isCarnivorous = false)
     {
-
         $this->genus = $genus;
         $this->isCarnivorous = $isCarnivorous;
     }
