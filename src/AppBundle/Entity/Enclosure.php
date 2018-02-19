@@ -77,4 +77,8 @@ class Enclosure
         return count($this->dinosaurs) === 0 || $this->dinosaurs->first()->isCarnivorous() == $dinosaur->isCarnivorous();
     }
 
+    public function getSecurities(): Collection
+    {
+        return $this->securities;
+    }
 }
