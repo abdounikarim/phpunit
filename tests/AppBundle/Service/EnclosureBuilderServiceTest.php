@@ -4,6 +4,8 @@
 namespace Tests\AppBundle\Service;
 
 
+use AppBundle\Entity\Dinosaur;
+use AppBundle\Entity\Enclosure;
 use AppBundle\Factory\DinosaurFactory;
 use AppBundle\Service\EnclosureBuilderService;
 use Doctrine\ORM\EntityManagerInterface;
@@ -14,10 +16,20 @@ class EnclosureBuilderServiceTest extends TestCase
     public function testItBuildsAndPersistsEnclosure()
     {
         $em = $this->createMock(EntityManagerInterface::class);
+        $em
+            ->expects($this->once())
+            ->method('persist')
+            ->with($this->isInstanceOf(Enclosure::class));
+
+        $em
+            ->expects($this->atLeastOnce())
+            ->method('flush');
+
         $dinosaurFactory = $this->createMock(DinosaurFactory::class);
 
         $dinosaurFactory->expects($this->exactly(2))
             ->method('growFromSpecification')
+            ->willReturn(new Dinosaur())
             ->with($this->isType('string'));
 
         $builder = new EnclosureBuilderService($em, $dinosaurFactory);
