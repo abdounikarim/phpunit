@@ -13,7 +13,12 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)
     {
+        $enclosures = $this
+            ->getDoctrine()
+            ->getRepository('AppBundle:Enclosure')
+            ->findAll();
         return $this->render('default/index.html.twig', [
+            'enclosures' => $enclosures
         ]);
     }
 

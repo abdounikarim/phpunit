@@ -43,6 +43,12 @@ class Enclosure
         }
     }
 
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
+
+
     public function addSecurity(Security $security)
     {
         $this->securities[] = $security;
@@ -86,5 +92,10 @@ class Enclosure
     public function getSecurities(): Collection
     {
         return $this->securities;
+    }
+
+    public function getDinosaurCount(): int
+    {
+        return $this->dinosaurs->count();
     }
 }
