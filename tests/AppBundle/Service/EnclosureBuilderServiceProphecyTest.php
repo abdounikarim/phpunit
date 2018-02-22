@@ -23,7 +23,7 @@ class EnclosureBuilderServiceProphecyTest extends TestCase
 
         $dinoFactory = $this->prophesize(DinosaurFactory::class);
         $dinoFactory
-            ->growfromSpecification(Argument::type('string'))
+            ->growFromSpecification(Argument::type('string'))
             ->shouldBeCalledTimes(2)
             ->willReturn(new Dinosaur());
 
