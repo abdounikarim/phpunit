@@ -29,7 +29,7 @@ class DinosaurFactory
         return $dinosaur;
     }
 
-    public function growfromSpecification($spec): Dinosaur
+    public function growFromSpecification($spec): Dinosaur
     {
         $codeName = 'InG-'.random_int(1, 99999);
         $length = $this->lengthDeterminator->getLengthFromSpecification($spec);

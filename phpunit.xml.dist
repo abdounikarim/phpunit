@@ -17,7 +17,7 @@
             <directory>tests</directory>
         </testsuite>
         <testsuite name="entities">
-            <directory>tests/*Bundle/Entitygit </directory>
+            <directory>tests/*Bundle/Entity</directory>
         </testsuite>
     </testsuites>
 

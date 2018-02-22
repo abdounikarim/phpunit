@@ -13,6 +13,13 @@ class Dinosaur
     const LARGE = 10;
     const HUGE = 20;
     /**
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     * @ORM\Column(type="integer")
+     */
+    private $id;
+
+    /**
      * @ORM\Column(type="integer")
      */
     private $length = 0;
@@ -28,7 +35,8 @@ class Dinosaur
     private $isCarnivorous;
 
     /**
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Enclosure", mappedBy="dinosaurs")
+     * @var Enclosure
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Enclosure", inversedBy="dinosaurs")
      */
     private $enclosure;
 
